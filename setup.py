@@ -15,7 +15,7 @@ INSTALL_REQUIRES = parse_requirements_file('requirements.txt')
 setup(
     name='segmentify',
     packages=find_packages(),
-    version='0.1.1',
+    version='0.2.0',
     description='Python image segmentation plugin.',
     maintainer='Nicholas Sofroniew',
     maintainer_email='sofroniewn@gmail.com',
@@ -44,5 +44,9 @@ setup(
     ],
     install_requires=INSTALL_REQUIRES,
     include_package_data=True,
-    entry_points={},
+    entry_points={
+        'napari.plugin': [
+            'segmentify = segmentify',
+        ],
+    },
 )
